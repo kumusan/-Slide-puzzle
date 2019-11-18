@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="./index.js"></script>
+    <title>スライドパズル</title>
+    <style>
+        table {
+            color: #404090;
+            border: solid 5px;
+        }
+        
+        td {
+            border: solid 1px;
+            width: 50px;
+            height: 50px;
+            font-size: 150%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="start">start</button>
+        <table>
+            <tr>
+                <td v-for="panel in panel_array[0]" @click="change_panel(panel)">{{panel}}</td>
+            </tr>
+            <tr>
+                <td v-for="panel in panel_array[1]" @click="change_panel(panel)">{{panel}}</td>
+            </tr>
+            <tr>
+                <td v-for="panel in panel_array[2]" @click="change_panel(panel)">{{panel}}</td>
+            </tr>
+            <tr>
+                <td v-for="panel in panel_array[3]" @click="change_panel(panel)">{{panel}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
