@@ -18,6 +18,10 @@
             font-size: 150%;
             text-align: center;
         }
+        
+        .active {
+            background-color: red;
+        }
     </style>
 </head>
 
@@ -26,18 +30,19 @@
         <button @click="start">start</button>
         <table>
             <tr>
-                <td v-for="panel in panel_array[0]" @click="change_panel(panel)">{{panel}}</td>
+                <td v-for="panel in panel_array[0]" @click="change_panel(panel)" :class="{active: panel === select_panel}" @mouseover="mouse_hover(panel)" @mouseleave="mouse_hover(panel)">{{panel}}</td>
             </tr>
             <tr>
-                <td v-for="panel in panel_array[1]" @click="change_panel(panel)">{{panel}}</td>
+                <td v-for="panel in panel_array[1]" @click="change_panel(panel)" :class="{active: panel === select_panel}" @mouseover="mouse_hover(panel)" @mouseleave="mouse_hover(panel)">{{panel}}</td>
             </tr>
             <tr>
-                <td v-for="panel in panel_array[2]" @click="change_panel(panel)">{{panel}}</td>
+                <td v-for="panel in panel_array[2]" @click="change_panel(panel)" :class="{active: panel === select_panel}" @mouseover="mouse_hover(panel)" @mouseleave="mouse_hover(panel)">{{panel}}</td>
             </tr>
             <tr>
-                <td v-for="panel in panel_array[3]" @click="change_panel(panel)">{{panel}}</td>
+                <td v-for="panel in panel_array[3]" @click="change_panel(panel)" :class="{active: panel === select_panel}" @mouseover="mouse_hover(panel)" @mouseleave="mouse_hover(panel)">{{panel}}</td>
             </tr>
         </table>
+        {{clear_log}}
     </div>
 </body>
 
